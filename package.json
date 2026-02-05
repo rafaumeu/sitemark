@@ -23,7 +23,7 @@
         "@commitlint/cli": "^20.4.1",
         "@commitlint/config-conventional": "^18.6.3",
         "@tailwindcss/vite": "^4.1.18",
-        "axios": "^1.11.0",
+        "axios": "^1.13.4",
         "blade-formatter": "^1.44.2",
         "concurrently": "^9.0.1",
         "husky": "^9.1.7",
