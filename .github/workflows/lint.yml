@@ -18,7 +18,7 @@ jobs:
           coverage: none
       - name: Cache Vendor Packages
         id: composer-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock')}}
