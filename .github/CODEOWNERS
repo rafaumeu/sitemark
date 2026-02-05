@@ -1,0 +1,11 @@
+# This file defines owner(s) for code in this repository
+# These owners will be automatically requested when new PRs are opened
+# Default owner for everything
+*     @rafaumeu
+
+# Laravel Core
+app/     @rafaumeu
+config/  @rafaumeu
+
+# Security
+SECURITY.md @rafaumeu

@@ -1,0 +1,21 @@
+bug:
+  - title: '/\[BUG\]/'
+  - body: "/bug|error|issue|problema/"
+
+enhancement:
+  - title: '/\[FEATURE\]/'
+  - body: "/feature|enhancement|funcionalidade/"
+
+documentation:
+  - title: '/\[DOCS\]/'
+  - body: "/documentation|documentação/"
+
+question:
+  - title: '/\[QUESTION\]|\?/'
+  - body: "/question|dúvida|how to/"
+
+help wanted:
+  - body: "/help wanted|preciso de ajuda/"
+
+good first issue:
+  - body: "/good first issue|iniciante/"

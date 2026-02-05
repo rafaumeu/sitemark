@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate changelog
+        id: changelog
+        uses: metcalfc/changelog-generator@v4.3.1
+        with:
+          myToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: |
+            ## 🎉 What's Changed
+
+            ${{ steps.changelog.outputs.changelog }}
+
+            ## 📦 Installation
+
+            ```bash
+            composer create-project rafaumeu/biolinks
+            ```
+
+            ## 🚀 Upgrade Guide
+
+            See [CHANGELOG.md](CHANGELOG.md) for detailed upgrade instructions.
+
+            **Full Changelog**: ${{ steps.changelog.outputs.compareurl }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
