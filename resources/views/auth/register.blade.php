@@ -93,20 +93,49 @@
         }
     }
 
-    const nameInput = document.getElementById('name');
-    const surnameInput = document.getElementById('surname');
-    const emailInput = document.getElementById('email');
-    const passInput = document.getElementById('password');
+    const elements = {
+        name: {
+            input: document.getElementById('name'),
+            check: document.getElementById('name-check')
+        },
+        surname: {
+            input: document.getElementById('surname'),
+            check: document.getElementById('surname-check')
+        },
+        email: {
+            input: document.getElementById('email'),
+            check: document.getElementById('email-check')
+        },
+        password: {
+            input: document.getElementById('password'),
+            check: document.getElementById('password-check')
+        },
+        submitBtn: document.getElementById('submit-btn'),
+        passwordRules: {
+            container: document.getElementById('password-rules'),
+            length: document.getElementById('rule-length'),
+            uppercase: document.getElementById('rule-uppercase'),
+            special: document.getElementById('rule-special'),
+            number: document.getElementById('rule-number')
+        }
+    };
 
-    const nameCheck = document.getElementById('name-check');
-    const surnameCheck = document.getElementById('surname-check');
-    const emailCheck = document.getElementById('email-check');
-    const passwordCheck = document.getElementById('password-check');
-
-    const ruleLength = document.getElementById('rule-length');
-    const ruleUppercase = document.getElementById('rule-uppercase');
-    const ruleSpecial = document.getElementById('rule-special');
-    const ruleNumber = document.getElementById('rule-number');
+    const validators = {
+        name: (val) => val.trim().length >= 3,
+        surname: (val) => val.trim().length >= 3,
+        email: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+        password: (val) => {
+            return {
+                hasLength: val.length >= 8,
+                hasUpper: /[A-Z]/.test(val),
+                hasSpecial: /[!@#$%^&*(),.?":{}|<>]/.test(val),
+                hasNumber: /[0-9]/.test(val),
+                isValid: function() {
+                    return this.hasLength && this.hasUpper && this.hasSpecial && this.hasNumber;
+                }
+            };
+        }
+    };
 
     const toggleCheck = (el, isValid) => {
         if (!el) return;
@@ -114,29 +143,53 @@
         else el.classList.add('hidden');
     };
 
-    if (nameInput) {
-        nameInput.addEventListener('input', (e) => toggleCheck(nameCheck, e.target.value.trim().length >= 3));
+    function validateForm() {
+        // Safe check if elements exist before reading values
+        const nameValid = elements.name.input ? validators.name(elements.name.input.value) : false;
+        const surnameValid = elements.surname.input ? validators.surname(elements.surname.input.value) : false;
+        const emailValid = elements.email.input ? validators.email(elements.email.input.value) : false;
+
+        let passValid = false;
+        if (elements.password.input) {
+            const passResult = validators.password(elements.password.input.value);
+            passValid = passResult.isValid();
+        }
+
+        if (nameValid && surnameValid && emailValid && passValid) {
+            elements.submitBtn.removeAttribute('disabled');
+        } else {
+            elements.submitBtn.setAttribute('disabled', 'true');
+        }
     }
-    if (surnameInput) {
-        surnameInput.addEventListener('input', (e) => toggleCheck(surnameCheck, e.target.value.trim().length >= 3));
+
+    // Attach listeners
+    if (elements.name.input) {
+        elements.name.input.addEventListener('input', (e) => {
+            toggleCheck(elements.name.check, validators.name(e.target.value));
+            validateForm();
+        });
     }
-    if (emailInput) {
-        emailInput.addEventListener('input', (e) => {
-            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
-            toggleCheck(emailCheck, isValid);
-        })
+
+    if (elements.surname.input) {
+        elements.surname.input.addEventListener('input', (e) => {
+            toggleCheck(elements.surname.check, validators.surname(e.target.value));
+            validateForm();
+        });
     }
-    if (passInput) {
-        passInput.addEventListener('input', (e) => {
+
+    if (elements.email.input) {
+        elements.email.input.addEventListener('input', (e) => {
+            toggleCheck(elements.email.check, validators.email(e.target.value));
+            validateForm();
+        });
+    }
+
+    if (elements.password.input) {
+        elements.password.input.addEventListener('input', (e) => {
             const val = e.target.value;
+            const result = validators.password(val);
 
-            const hasLength = val.length >= 8;
-            const hasUpper = /[A-Z]/.test(val);
-            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(val);
-            const hasNumber = /[0-9]/.test(val);
-
-            const rulesContainer = document.getElementById('password-rules');
-            toggleCheck(rulesContainer, val.length > 0);
+            toggleCheck(elements.passwordRules.container, val.length > 0);
 
             const setStatus = (el, condition) => {
                 if (condition) {
@@ -147,40 +200,14 @@
                     el.classList.add('text-content-secondary');
                 }
             }
-            setStatus(ruleLength, hasLength);
-            setStatus(ruleUppercase, hasUpper);
-            setStatus(ruleSpecial, hasSpecial);
-            setStatus(ruleNumber, hasNumber);
 
-            toggleCheck(passwordCheck, hasLength && hasUpper && hasSpecial && hasNumber);
+            setStatus(elements.passwordRules.length, result.hasLength);
+            setStatus(elements.passwordRules.uppercase, result.hasUpper);
+            setStatus(elements.passwordRules.special, result.hasSpecial);
+            setStatus(elements.passwordRules.number, result.hasNumber);
+
+            toggleCheck(elements.password.check, result.isValid());
             validateForm();
-        })
+        });
     }
-
-    const submitBtn = document.getElementById('submit-btn');
-
-    function validateForm() {
-        const nameValid = nameInput.value.trim().length >= 3;
-        const surnameValid = surnameInput.value.trim().length >= 3;
-        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-
-        const passVal = passInput.value;
-        const passValid = passVal.length >= 8 &&
-            /[A-Z]/.test(passVal) &&
-            /[!@#$%^&*(),.?":{}|<>]/.test(passVal) &&
-            /[0-9]/.test(passVal);
-
-        if (nameValid && surnameValid && emailValid && passValid) {
-            submitBtn.removeAttribute('disabled');
-        } else {
-            submitBtn.setAttribute('disabled', 'true');
-        }
-    }
-
-    // Add validation listeners to other inputs to create real-time button state
-    [nameInput, surnameInput, emailInput].forEach(input => {
-        if (input) {
-            input.addEventListener('input', validateForm);
-        }
-    });
 </script>
