@@ -115,10 +115,10 @@
     };
 
     if (nameInput) {
-        nameInput.addEventListener('input', (e) => toggleCheck(nameCheck, e.target.value.trim().length > 1));
+        nameInput.addEventListener('input', (e) => toggleCheck(nameCheck, e.target.value.trim().length >= 3));
     }
     if (surnameInput) {
-        surnameInput.addEventListener('input', (e) => toggleCheck(surnameCheck, e.target.value.trim().length > 1));
+        surnameInput.addEventListener('input', (e) => toggleCheck(surnameCheck, e.target.value.trim().length >= 3));
     }
     if (emailInput) {
         emailInput.addEventListener('input', (e) => {
@@ -160,8 +160,8 @@
     const submitBtn = document.getElementById('submit-btn');
 
     function validateForm() {
-        const nameValid = nameInput.value.trim().length > 1;
-        const surnameValid = surnameInput.value.trim().length > 1;
+        const nameValid = nameInput.value.trim().length >= 3;
+        const surnameValid = surnameInput.value.trim().length >= 3;
         const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
 
         const passVal = passInput.value;

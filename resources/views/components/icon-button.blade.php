@@ -1,4 +1,4 @@
-@props(['icon', 'variant' => 'primary', 'href' => null]);
+@props(['variant' => 'primary', 'href' => null]);
 
 @php
     $base = 'flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200';
@@ -11,11 +11,13 @@
 @endphp
 
 @if ($href)
-    <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+    <a href="{{ $href }}"
+        {{ $attributes->merge(['class' => $classes, 'aria-label' => $attributes->get('aria-label', 'Icon button')]) }}>
         {{ $slot }}
     </a>
 @else
-    <button {{ $attributes->merge(['class' => $classes]) }}>
+    <button
+        {{ $attributes->merge(['class' => $classes, 'type' => 'button', 'aria-label' => $attributes->get('aria-label', 'Icon button')]) }}>
         {{ $slot }}
     </button>
 @endif

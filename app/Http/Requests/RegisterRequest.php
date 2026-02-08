@@ -11,6 +11,7 @@ use Illuminate\Validation\Rules\Password;
 
 /**
  * @property-read string $name
+ * @property-read string $surname
  * @property-read string $email
  * @property-read string $password
  */
@@ -32,7 +33,7 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'     => ['required', 'string'],
+            'name'     => ['required', 'string', 'min:3', 'max:255'],
             'surname'  => ['required', 'string', 'min:3', 'max:255'],
             'email'    => ['required', 'email', 'confirmed', 'unique:users'],
             'password' => ['required', Password::default()],

@@ -13,8 +13,7 @@
         'relative flex items-center gap-3 p-3 rounded-xl transition-all duration-200 border w-full',
         'border-transparent hover:border-border-primary' => !$hasError,
         'border-accent-red' => $hasError,
-        'focus-within:border-accent-orange focus-within:ring-1 focus-within:ring-accent-orange' => $attributes->get(
-            'class'),
+        'focus-within:border-accent-orange focus-within:ring-1 focus-within:ring-accent-orange',
     ])>
         @if ($prefix)
             <span class="text-content-tertiary select-none">{{ $prefix }}</span>

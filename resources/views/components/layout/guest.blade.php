@@ -31,13 +31,12 @@
     <div class="min-h-screen flex p-5 gap-10 bg-background-primary">
         {{-- Lado Esquerdo: Imagem (724px, Radius 16px) --}}
         <div class="hidden lg:block w-[724px] shrink-0 relative bg-background-tertiary overflow-hidden rounded-2xl">
-            <img src="{{ asset('img/sun-tornado.png') }}"
-                onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop'"
-                alt="Background" class="absolute inset-0 h-full w-full object-cover">
+            <img src="{{ asset('img/sun-tornado.png') }}" onerror="this.style.display='none'" alt="Background"
+                class="absolute inset-0 h-full w-full object-cover">
         </div>
 
         {{-- Lado Direito: Conteúdo --}}
-        <div class="flex-1 flex flex-col justify-center items-center relative px-[80px]">
+        <div class="flex-1 flex flex-col justify-center items-center relative px-6 md:px-12 lg:px-[80px]">
             <div class="w-full max-w-[440px] flex flex-col {{ $headerGap }}">
                 <div class="flex justify-center">
                     <img src="{{ asset('img/logo.svg') }}" alt="Sitemark" class="w-[228px] h-[62px]"
