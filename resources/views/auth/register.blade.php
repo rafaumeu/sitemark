@@ -36,7 +36,8 @@
                         <div id="password-check" class="hidden text-accent-green transition-opacity duration-300">
                             <x-iconoir-check-circle-solid class="w-5 h-5" />
                         </div>
-                        <button type="button" onclick="togglePassword()"
+                        <button type="button" onclick="togglePassword()" aria-label="Mostrar senha"
+                            aria-pressed="false"
                             class="focus:outline-none hover:text-content-primary transition-colors duration-200">
                             <x-iconoir-eye-closed id="eye-closed" />
                             <x-iconoir-eye id="eye-open" class="hidden" />
@@ -81,15 +82,20 @@
         const input = document.getElementById('password');
         const eyeOpen = document.getElementById('eye-open');
         const eyeClosed = document.getElementById('eye-closed');
+        const button = input.nextElementSibling.querySelector('button');
 
         if (input.type === 'password') {
             input.type = 'text';
             eyeOpen.classList.remove('hidden');
             eyeClosed.classList.add('hidden');
+            button.setAttribute('aria-pressed', 'true');
+            button.setAttribute('aria-label', 'Ocultar senha');
         } else {
             input.type = 'password';
             eyeOpen.classList.add('hidden');
             eyeClosed.classList.remove('hidden');
+            button.setAttribute('aria-pressed', 'false');
+            button.setAttribute('aria-label', 'Mostrar senha');
         }
     }
 
