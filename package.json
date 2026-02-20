@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@commitlint/cli": "^20.4.1",
-        "@commitlint/config-conventional": "^20.4.1",
+        "@commitlint/config-conventional": "^20.4.2",
         "@tailwindcss/vite": "^4.1.18",
         "axios": "^1.11.0",
         "blade-formatter": "^1.44.2",
