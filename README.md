@@ -1,9 +1,13 @@
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=FFCA28&height=180&section=header&text=Sitemark&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=Modern%20Landing%20Page%20Template&descSize=18&descAlignY=52"/>
+</div>
+
 # 🔗 Sitemark
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&logoScale=20)
-[![Lint](https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml/badge.svg)](https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml)
-![PHP](https://img.shields.io/badge/php-8.2+-777BB4.svg?style=for-the-badge&logo=php&logoColor=white&logoScale=20)
-![Laravel](https://img.shields.io/badge/laravel-12.x-FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white&logoScale=20)
+<img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&logoScale=20"/>
+[<img alt="Lint" src="https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml/badge.svg"/>](https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml)
+<img alt="PHP" src="https://img.shields.io/badge/php-8.2+-777BB4.svg?style=for-the-badge&logo=php&logoColor=white&logoScale=20"/>
+<img alt="Laravel" src="https://img.shields.io/badge/laravel-12.x-FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white&logoScale=20"/>
 
 **Sitemark** is a powerful, professional "link-in-bio" platform. Built with Laravel 12, it provides a fast and SEO-optimized solution to consolidate your social media presence.
 
@@ -100,8 +104,13 @@ We strictly follow the [**GitHub Flow**](CONTRIBUTING.md).
 <div align="center">
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/30784471?v=4" width="100px;" alt=""/>
 
-Made with 💜 by **[Rafael Dias Zendron](https://github.com/rafaumeu)**
+Made with 💜 by <strong><a href="https://github.com/rafaumeu">Rafael Dias Zendron</a></strong>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rafael-dias-zendron/)](https://www.linkedin.com/in/rafael-dias-zendron/)
-[![Gmail Badge](https://img.shields.io/badge/-mmmarckos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mmmarckos@gmail.com)](mailto:mmmarckos@gmail.com)
+[<img alt="Linkedin Badge" src="https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rafael-dias-zendron/"/>](https://www.linkedin.com/in/rafael-dias-zendron/)
+[<img alt="Gmail Badge" src="https://img.shields.io/badge/-mmmarckos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mmmarckos@gmail.com"/>](mailto:mmmarckos@gmail.com)
+</div>
+
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=FFCA28&height=100&section=footer"/>
+  <br/><sub>Built with ❤️ by <a href="https://github.com/rafaumeu">Rafael Zendron</a></sub>
 </div>
