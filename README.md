@@ -5,7 +5,7 @@
 # 🔗 Sitemark
 
 <img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&logoScale=20"/>
-[<img alt="Lint" src="https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml/badge.svg"/>](https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml)
+<a href="https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml"><img alt="Lint" src="https://github.com/rafaumeu/sitemark/actions/workflows/lint.yml/badge.svg"/></a>
 <img alt="PHP" src="https://img.shields.io/badge/php-8.2+-777BB4.svg?style=for-the-badge&logo=php&logoColor=white&logoScale=20"/>
 <img alt="Laravel" src="https://img.shields.io/badge/laravel-12.x-FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white&logoScale=20"/>
 
@@ -106,8 +106,8 @@ We strictly follow the [**GitHub Flow**](CONTRIBUTING.md).
 
 Made with 💜 by <strong><a href="https://github.com/rafaumeu">Rafael Dias Zendron</a></strong>
 
-[<img alt="Linkedin Badge" src="https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rafael-dias-zendron/"/>](https://www.linkedin.com/in/rafael-dias-zendron/)
-[<img alt="Gmail Badge" src="https://img.shields.io/badge/-mmmarckos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mmmarckos@gmail.com"/>](mailto:mmmarckos@gmail.com)
+<a href="https://www.linkedin.com/in/rafael-dias-zendron/"><img alt="Linkedin Badge" src="https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rafael-dias-zendron/"/></a>
+<a href="mailto:mmmarckos@gmail.com"><img alt="Gmail Badge" src="https://img.shields.io/badge/-mmmarckos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mmmarckos@gmail.com"/></a>
 </div>
 
 <div align="center">
