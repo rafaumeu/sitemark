@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use App\Models\User;
 
@@ -32,11 +32,11 @@ describe('guest routes', function () {
 
     test('guest can register', function () {
         $response = $this->post(route('register'), [
-            'name'                  => 'John',
-            'surname'               => 'Doe',
-            'email'                 => 'john@example.com',
-            'email_confirmation'    => 'john@example.com',
-            'password'              => 'password123',
+            'name'               => 'John',
+            'surname'            => 'Doe',
+            'email'              => 'john@example.com',
+            'email_confirmation' => 'john@example.com',
+            'password'           => 'password123',
         ]);
 
         $response->assertRedirect(route('dashboard'));
@@ -151,7 +151,7 @@ describe('authenticated routes', function () {
 
     test('user cannot edit another users link', function () {
         $otherUser = User::factory()->create();
-        $link = $otherUser->links()->create([
+        $link      = $otherUser->links()->create([
             'link' => 'https://example.com',
             'name' => 'Other Link',
             'sort' => 0,

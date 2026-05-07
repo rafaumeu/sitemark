@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use App\Models\Link;
 use App\Models\User;
@@ -61,7 +61,7 @@ describe('Link model', function () {
     });
 
     test('link moveUp swaps sort with previous link', function () {
-        $user = User::factory()->create();
+        $user  = User::factory()->create();
         $linkA = $user->links()->create(['link' => 'https://a.com', 'name' => 'A', 'sort' => 0]);
         $linkB = $user->links()->create(['link' => 'https://b.com', 'name' => 'B', 'sort' => 1]);
 
@@ -72,7 +72,7 @@ describe('Link model', function () {
     });
 
     test('link moveDown swaps sort with next link', function () {
-        $user = User::factory()->create();
+        $user  = User::factory()->create();
         $linkA = $user->links()->create(['link' => 'https://a.com', 'name' => 'A', 'sort' => 0]);
         $linkB = $user->links()->create(['link' => 'https://b.com', 'name' => 'B', 'sort' => 1]);
 
