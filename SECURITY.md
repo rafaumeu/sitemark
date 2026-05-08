@@ -4,9 +4,19 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.x   | :white_check_mark:   |
-| < 1.0   | :x:                |
+| 2.x     | :white_check_mark: |
+| < 2.0   | :x:                |
 
 ## Reporting a Vulnerability
 
-If you find a security vulnerability, please send a email to mmmarckos@gmail.com instead of opening a public issue.
+If you discover a security vulnerability in this project, please open a [GitHub Security Advisory](https://github.com/rafaumeu/sitemark/security/advisories/new).
+
+Please do not disclose security vulnerabilities publicly until a fix has been released.
+
+## Security Features
+
+- [Semgrep](https://semgrep.dev/) static analysis on every PR
+- [CodeQL](https://codeql.github.com/) security scanning weekly
+- [Gitleaks](https://gitleaks.io/) secret detection on every push
+- Dependabot automated dependency updates
+- Branch protection with required CI checks
